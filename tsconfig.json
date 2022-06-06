@@ -1,0 +1,17 @@
+{
+    "extends": "@tsconfig/node12/tsconfig.json",
+    "include": ["src"],
+    "exclude": ["node_modules", "./**/dist"],
+    "compilerOptions": {
+        "paths": {
+            "nextjs-hello": ["./src/index.ts"]
+        },
+        "declarationMap": true,
+        "declaration": true,
+        "baseUrl": "./src/",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "target": "es2019",
+        "strict": true,
+        "outDir": "./dist"
+    }
+}
