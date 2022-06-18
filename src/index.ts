@@ -68,3 +68,5 @@ export const withHelloSsr = getInstance().withHelloSsr
 
 export { getUser } from './lib/user'
 export { default as useUser } from './frontend/user'
+export { default as SignInButton } from './frontend/sign-in'
+export { default as UpdateProfileButton } from './frontend/update-profile'
