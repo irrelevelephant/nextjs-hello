@@ -14,7 +14,7 @@ export default function UpdateProfileButton({ loginRoute = defaultLoginRoute }: 
     const onSignIn = () => {
         setClicked(true)
         push(loginRoute + '?' + new URLSearchParams({
-            sourceUrl: asPath,
+            sourceRoute: asPath,
             updateProfile: true.toString()
         }))
     }

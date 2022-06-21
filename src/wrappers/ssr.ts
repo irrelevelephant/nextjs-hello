@@ -5,7 +5,7 @@ import { buildLoginRoute } from '../lib/login'
 import type { Config } from '../lib/config'
 
 export interface SsrOptions {
-    sourceUrl: string
+    sourceRoute: string
 }
 
 const withHelloSsrFactory = (config: Config) =>
@@ -19,7 +19,7 @@ const withHelloSsrFactory = (config: Config) =>
             return {
                 redirect: {
                     statusCode: 302,
-                    destination: buildLoginRoute({ loginRoute: config.loginRoute, sourceUrl: options.sourceUrl })
+                    destination: buildLoginRoute({ loginRoute: config.loginRoute, sourceRoute: options.sourceRoute })
                 }
             }
         }

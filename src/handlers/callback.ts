@@ -10,7 +10,7 @@ const handleCallbackFactory = (config: Config): NextApiHandler =>
     withIronSessionApiRoute(async (req: NextApiRequest, res: NextApiResponse) => {
         await consentCors(req, res)
 
-        let sourceUrl = ''
+        let sourceRoute = ''
 
         if (!config.baseUrl) {
             res.status(500).end('Missing baseUrl configuration')
@@ -45,7 +45,7 @@ const handleCallbackFactory = (config: Config): NextApiHandler =>
 
             const unsealedState: Record<string, string> = await unsealData(state, config.sessionOptions)
             const { nonce } = unsealedState
-            sourceUrl = unsealedState.sourceUrl
+            sourceRoute = unsealedState.sourceRoute
 
             try {
                 const claims: HelloClaims = await fetch(
@@ -70,7 +70,7 @@ const handleCallbackFactory = (config: Config): NextApiHandler =>
         }
 
         const baseUrl = new URL(config.baseUrl)
-        const dangerousReturnTo = sourceUrl || config.defaultReturnToRoute
+        const dangerousReturnTo = sourceRoute || config.defaultReturnToRoute
         let safeReturnTo: URL
         try {
             safeReturnTo = new URL(dangerousReturnTo, baseUrl)

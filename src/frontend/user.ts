@@ -19,7 +19,7 @@ export default function useUser({
         if (!user || !isReady) return
 
         if (!user.isLoggedIn && redirect) {
-            push(buildLoginRoute({ sourceUrl: asPath }))
+            push(buildLoginRoute({ sourceRoute: asPath }))
         }
     }, [user, isReady, asPath])
 

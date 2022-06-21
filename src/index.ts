@@ -21,7 +21,7 @@ interface HelloInstance {
 
 let instance: HelloInstance
 
-const initHello = (config?: Partial<Config>): HelloInstance => {
+export const initHello = (config?: Partial<Config>): HelloInstance => {
     const mergedConfig = getConfig(config)
 
     const handleLogin = handleLoginFactory(mergedConfig)

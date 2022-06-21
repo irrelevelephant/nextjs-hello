@@ -9,7 +9,7 @@ import type { Config } from '../lib/config'
 
 const handleLoginFactory = (config: Config): NextApiHandler =>
     withIronSessionApiRoute(async (req: NextApiRequest, res: NextApiResponse) => {
-        const { sourceUrl, updateProfile } = req.query
+        const { sourceRoute, updateProfile } = req.query
 
         if (!config.baseUrl) {
             res.status(500).end('Missing baseUrl configuration')
@@ -26,11 +26,11 @@ const handleLoginFactory = (config: Config): NextApiHandler =>
 
         const nonce = uuidv4()
         req.session.nonce = nonce
-        req.session.sourceUrl = Array.isArray(sourceUrl) ? sourceUrl[0] : sourceUrl
+        req.session.sourceRoute = Array.isArray(sourceRoute) ? sourceRoute[0] : sourceRoute
         await req.session.save()
         const state = await sealData({
             nonce,
-            sourceUrl: Array.isArray(sourceUrl) ? sourceUrl[0] : sourceUrl
+            sourceRoute: Array.isArray(sourceRoute) ? sourceRoute[0] : sourceRoute
         }, config.sessionOptions)
 
         const baseUrl = new URL(config.baseUrl)

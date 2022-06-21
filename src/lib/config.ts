@@ -2,7 +2,7 @@ import type { IronSessionOptions } from 'iron-session'
 
 export const defaultLoginRoute = '/api/auth/login'
 export const defaultCallbackRoute = '/api/auth/callback'
-export const defaultQuickstartRoute = '/api/auth/quickstart'
+export const defaultQuickstartRoute = '/api/quickstart'
 export const defaultReturnToRoute = '/'
 
 export const defaultUserApiRoute = '/api/auth/me'
