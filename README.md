@@ -41,6 +41,26 @@ export default function Page() {
 }
  ```
 
+These buttons require the Hellō CSS for styling, which can be included as follows in the `_document.jsx` page:
+
+```jsx
+import { Html, Head, Main, NextScript } from 'next/document'
+
+export default function Document() {
+    return (
+        <Html>
+            <Head>
+                <link href="https://cdn.hello.coop/css/hello-button.css" rel="stylesheet" />
+            </Head>
+            <body>
+                <Main />
+                <NextScript />
+            </body>
+        </Html>
+    )
+}
+```
+
 ### Statically-generated Pages
 For statically-generated pages, the `useUser` hook will return user data from the current session, including a unique identifier called `sub`.
 
