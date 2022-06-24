@@ -5,14 +5,17 @@ This package includes a Next.js SDK for signing in with [Hellō](https://www.hel
 
 ## Getting Started
 
+### Example
+For example usage in a Next.js app, see [`next-with-hello`](https://github.com/irrelevelephant/next-with-hello).
+
 ### Environment Setup
-To add sign-in and session capability to your Next.js application, take a dependency on `nextjs-hello` and follow these steps:
+To add sign-in and session capability to your Next.js application, take a dependency on `nextjs-hello` (`npm install nextjs-hello` or `yarn add nextjs-hello`) and follow these steps:
 
 1. Create a new application in the [Hellō Developer Console](https://console.hello.dev/), or navigate to an existing application you want to use. Copy the **Client ID**. In your application, define a new environment variable (e.g., using a `.env.` file) called `HELLO_CLIENT_ID`, and set its value to the **Client ID** you copied.
 
 2. Navigate to your application in the [Hellō Developer Console](https://console.hello.dev/), and add the your app's callback URL to the **Production Redirect URIs**. For example, if your domain is `example.com`, this would be `https://example.com/api/auth/callback`.
 
-3. Define a variable called `HELLO_SESSION_SECRET`, and set its value to a random string. This value should kept safe; i.e., not checked into source control.
+3. Define a variable called `HELLO_SESSION_SECRET`, and set its value to a random string. This value should kept safe; i.e., not checked into source control. For example, this could be stored in a Vercel environment variable.
 
 You can generate an appropriate salt by executing `node -e "console.log(crypto.randomBytes(32).toString('hex'))"`.
 
