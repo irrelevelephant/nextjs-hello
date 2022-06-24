@@ -101,7 +101,7 @@ export const getServerSideProps = withHelloSsr(async ({ req }) => ({
 }), { sourceRoute: '/ssr-page })
 ```
 
-If the user is not logged in, they will be redirected to Hellōm, which will return the user to `sourceRoute` after authenticating.
+If the user is not logged in, they will be redirected to Hellō, which will return the user to `sourceRoute` after authenticating.
 
 ### API Rotues
 To require authentication for API routes, use `withHelloApi`.
