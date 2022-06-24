@@ -15,11 +15,11 @@ To add sign-in and session capability to your Next.js application, take a depend
 
 2. Navigate to your application in the [Hellō Developer Console](https://console.hello.dev/), and add the your app's callback URL to the **Production Redirect URIs**. For example, if your domain is `example.com`, this would be `https://example.com/api/auth/callback`.
 
-3. Define a variable called `HELLO_SESSION_SECRET`, and set its value to a random string. This value should kept safe; i.e., not checked into source control. For example, this could be stored in a Vercel environment variable.
+3. Define an environment variable called `HELLO_SESSION_SECRET`, and set its value to a random string. This value should kept safe; i.e., not checked into source control. For example, this could be stored in a Vercel environment variable.
 
 You can generate an appropriate salt by executing `node -e "console.log(crypto.randomBytes(32).toString('hex'))"`.
 
-4. Define a variable called `HELLO_BASE_URL`. In a local development environment, this is usually `http://localhost:3000`. In a production environment, this should include the protocol and domain name, e.g. `https://example.com`.
+4. Define an environment variable called `HELLO_BASE_URL`. In a local development environment, this is usually `http://localhost:3000`. In a production environment, this should include the protocol and domain name, e.g. `https://example.com`.
 
 5. Create a directory called `auth` in `/pages/api/`. In this new directory, create a file called `[...hello].js` with the following contents:
 
