@@ -1,7 +1,7 @@
 # nextjs-hello
 This package includes a Next.js SDK for signing in with [Hellō](https://www.hello.dev/), an OpenID Connect Provider that simplifies user registration and login.
 
-`nextjs-hello` aims to be the fastest way to add social login to a Next.js app. Just add the included login button component and authentication APIs to your app, and you'll be able to pull user data on the client via the `useUser` hook, or on the server via the request.
+`nextjs-hello` aims to be the fastest way to add user sign-in to a Next.js app. It enables sign-in through popular social login providers with no additional setup. Just add the included sign-in button component and authentication APIs to your app - your users will be able to sign in through their preferred provider, and you'll be able to pull user data on the client via the `useUser` hook, or on the server via the request.
 
 ## Getting Started
 

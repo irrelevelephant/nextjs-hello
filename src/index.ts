@@ -1,5 +1,3 @@
-import { NextApiHandler } from 'next'
-
 import getConfig, { Config } from './lib/config'
 import handleAuthFactory from './handlers/auth'
 import handleLoginFactory from './handlers/login'
@@ -8,6 +6,8 @@ import handleCallbackFactory from './handlers/callback'
 import handleUserFactory from './handlers/user'
 import { default as withHelloApiFactory } from './wrappers/api'
 import { default as withHelloSsrFactory } from './wrappers/ssr'
+
+import type { NextApiHandler } from 'next'
 
 interface HelloInstance {
     handleAuth: NextApiHandler,
@@ -58,13 +58,15 @@ const getInstance = (): HelloInstance => {
     return instance
 }
 
-export const handleAuth = getInstance().handleAuth
-export const handleLogin = getInstance().handleLogin
-export const handleLogout = getInstance().handleLogout
-export const handleCallback = getInstance().handleCallback
-export const handleUser = getInstance().handleUser
-export const withHelloApi = getInstance().withHelloApi
-export const withHelloSsr = getInstance().withHelloSsr
+export const {
+    handleAuth,
+    handleLogin,
+    handleLogout,
+    handleCallback,
+    handleUser,
+    withHelloApi,
+    withHelloSsr
+} = getInstance()
 
 export { getUser } from './lib/user'
 export { default as useUser } from './frontend/user'
