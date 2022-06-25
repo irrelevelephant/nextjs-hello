@@ -67,7 +67,7 @@ export default function Document() {
 ### Statically-generated Pages
 For statically-generated pages, the `useUser` hook will return user data from the current session, including a unique identifier called `sub`.
 
-```
+```jsx
 import { useUser } from 'nextjs-hello`
 
 export default function StaticallyGeneratedPage() {
