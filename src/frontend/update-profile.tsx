@@ -20,7 +20,7 @@ export default function UpdateProfileButton({ loginRoute = defaultLoginRoute }: 
     }
 
     return (
-        <button onClick={onSignIn} disabled={clicked} className={`hello-btn-white-and-static ${clicked ? 'hello-btn-loader' : ''}`}>
+        <button onClick={onSignIn} disabled={clicked} className={`hello-btn hello-btn-white-and-static ${clicked ? 'hello-btn-loader' : ''}`}>
             ō&nbsp;&nbsp;&nbsp;Update Profile with Hellō
         </button>
     )

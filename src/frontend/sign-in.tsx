@@ -18,7 +18,7 @@ export default function SignInButton({ loginRoute = defaultLoginRoute }: SignInB
     }
 
     return (
-        <button onClick={onSignIn} disabled={clicked} className={`hello-btn-black-on-light ${clicked ? 'hello-btn-loader' : ''}`}>
+        <button onClick={onSignIn} disabled={clicked} className={`hello-btn ${clicked ? 'hello-btn-loader' : ''}`}>
             ō&nbsp;&nbsp;&nbsp;Continue with Hellō
         </button>
     )
