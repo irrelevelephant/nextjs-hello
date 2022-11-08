@@ -158,10 +158,10 @@ const { user: { sub, name, email, picture } } = useUser()
  * The route to which the callback route will redirect if the original source URL is not present. By default, this is the root of your domain, i.e. `/`.
 
 * `HELLO_ENABLE_QUICKSTART` (optional)
- * A boolean (`true` or `false`) value indicating whether to enable the [quickstart](https://quickstart.hello.dev/) functionality. If `true` and `HELLO_CLIENT_ID` is not set, the application will automatically redirect the user to create a new application and acquire a new **Client ID**. By default, this is enabled in development but disabled in production.
+ * A boolean (`true` or `false`) value indicating whether to enable the [quickstart](https://quickstart.hello.coop/) functionality. If `true` and `HELLO_CLIENT_ID` is not set, the application will automatically redirect the user to create a new application and acquire a new **Client ID**. By default, this is enabled in development but disabled in production.
 
 * `HELLO_QUICKSTART_API_ROUTE` (optional)
- * The API route to which the Hellō [quickstart](https://quickstart.hello.dev/) will return during local development. If specified, this should be implemented by your app - `nextjs-hello` does not include this API route. When calling this route, Hellō will include a `client_id` query parameter, which you can then save to your configuration.
+ * The API route to which the Hellō [quickstart](https://quickstart.hello.coop/) will return during local development. If specified, this should be implemented by your app - `nextjs-hello` does not include this API route. When calling this route, Hellō will include a `client_id` query parameter, which you can then save to your configuration.
 
 * `HELLO_SCOPES` (optional)
  * A comma-separated list of OpenID Connect scopes/claims to request from Hellō (documented [here](https://www.hello.dev/documentation/hello-claims.html#current-scopes)). By default, this is `openid,name,email`. These claims will be present in the `User` object, as returned by `useUser` or `getUser`.
