@@ -11,9 +11,9 @@ For example usage in a Next.js app, see [`next-with-hello`](https://github.com/i
 ### Environment Setup
 To add sign-in and session capability to your Next.js application, take a dependency on `nextjs-hello` (`npm install nextjs-hello` or `yarn add nextjs-hello`) and follow these steps:
 
-1. Create a new application in the [Hellō Developer Console](https://console.hello.dev/), or navigate to an existing application you want to use. Copy the **Client ID**. In your application, define a new environment variable (e.g., using a `.env.` file) called `HELLO_CLIENT_ID`, and set its value to the **Client ID** you copied.
+1. Create a new application in the [Hellō Developer Console](https://console.hello.coop/), or navigate to an existing application you want to use. Copy the **Client ID**. In your application, define a new environment variable (e.g., using a `.env.` file) called `HELLO_CLIENT_ID`, and set its value to the **Client ID** you copied.
 
-2. Navigate to your application in the [Hellō Developer Console](https://console.hello.dev/), and add the your app's callback URL to the **Production Redirect URIs**. For example, if your domain is `example.com`, this would be `https://example.com/api/auth/callback`.
+2. Navigate to your application in the [Hellō Developer Console](https://console.hello.coop/), and add the your app's callback URL to the **Production Redirect URIs**. For example, if your domain is `example.com`, this would be `https://example.com/api/auth/callback`.
 
 3. Define an environment variable called `HELLO_SESSION_SECRET`, and set its value to a random string. This value should kept safe; i.e., not checked into source control. For example, this could be stored in a Vercel environment variable.
 
@@ -53,7 +53,7 @@ export default function Document() {
     return (
         <Html>
             <Head>
-                <link href="https://cdn.hello.coop/css/hello-button.css" rel="stylesheet" />
+                <link href="https://cdn.hello.coop/css/hello-btn.css" rel="stylesheet" />
             </Head>
             <body>
                 <Main />
@@ -158,10 +158,10 @@ const { user: { sub, name, email, picture } } = useUser()
  * The route to which the callback route will redirect if the original source URL is not present. By default, this is the root of your domain, i.e. `/`.
 
 * `HELLO_ENABLE_QUICKSTART` (optional)
- * A boolean (`true` or `false`) value indicating whether to enable the [quickstart](https://quickstart.hello.dev/) functionality. If `true` and `HELLO_CLIENT_ID` is not set, the application will automatically redirect the user to create a new application and acquire a new **Client ID**. By default, this is enabled in development but disabled in production.
+ * A boolean (`true` or `false`) value indicating whether to enable the [quickstart](https://quickstart.hello.coop/) functionality. If `true` and `HELLO_CLIENT_ID` is not set, the application will automatically redirect the user to create a new application and acquire a new **Client ID**. By default, this is enabled in development but disabled in production.
 
 * `HELLO_QUICKSTART_API_ROUTE` (optional)
- * The API route to which the Hellō [quickstart](https://quickstart.hello.dev/) will return during local development. If specified, this should be implemented by your app - `nextjs-hello` does not include this API route. When calling this route, Hellō will include a `client_id` query parameter, which you can then save to your configuration.
+ * The API route to which the Hellō [quickstart](https://quickstart.hello.coop/) will return during local development. If specified, this should be implemented by your app - `nextjs-hello` does not include this API route. When calling this route, Hellō will include a `client_id` query parameter, which you can then save to your configuration.
 
 * `HELLO_SCOPES` (optional)
  * A comma-separated list of OpenID Connect scopes/claims to request from Hellō (documented [here](https://www.hello.dev/documentation/hello-claims.html#current-scopes)). By default, this is `openid,name,email`. These claims will be present in the `User` object, as returned by `useUser` or `getUser`.
