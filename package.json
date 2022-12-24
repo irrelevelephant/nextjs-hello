@@ -1,7 +1,7 @@
 {
     "name": "nextjs-hello",
     "description": "Next.js SDK for signing in with Hellō",
-    "version": "0.1.10",
+    "version": "0.1.11",
     "repository": "git@github.com:irrelevelephant/nextjs-hello.git",
     "author": "Thomas Smith <tsmithtree@gmail.com>",
     "license": "MIT",
